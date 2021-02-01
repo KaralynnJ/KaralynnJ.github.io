@@ -42,7 +42,7 @@
 
 /* Float the link section to the right */
 
-.header-right {
+#nav_container {
   float: right;
 }
 
@@ -59,28 +59,6 @@
   }
 }
 
-#nav_container {
-  float: right;
-}
-
-#chart_container #chart_title {
-  text-align: center;
-  padding-top:20px;
-}
-
-#chart_div{
-  display: flex;
-  justify-content: center;
-  height: 450px;
-}
-
-.push-down {
-  padding-top: 40px;
-}
-
-.fas{
-  font-size:50px;
-}
 
 * {box-sizing: border-box}
 
@@ -127,3 +105,25 @@
   height: 550px;
 }
 
+/* Chart title alignment */
+#chart_container #chart_title {
+  text-align: center;
+  padding-top:20px;
+}
+
+/* Chart centering and sizing */
+#chart_div{
+  display: flex;
+  justify-content: center;
+  height: 450px;
+}
+
+/* Generic padding class for containers near the header */
+.push-down {
+  padding-top: 40px;
+}
+
+/* Icon font size adjustment */
+.fas{
+  font-size:50px;
+}
