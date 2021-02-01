@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
         // Validate reCAPTCHA box 
         if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])){ 
             // Google reCAPTCHA API secret key 
-            $secretKey = '6Le44qIUAAAAAGd4UW6kJvn7OUUAo2Bj8QxE0FpB'; 
+            $secretKey = ''; 
              
             // Verify the reCAPTCHA response 
             $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secretKey.'&response='.$_POST['g-recaptcha-response']); 
