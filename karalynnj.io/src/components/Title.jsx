@@ -8,24 +8,32 @@ const Title = () => {
       <Grid container spacing={2}>
         <Grid md={6}>
           <Stack direction={"column"}>
-            <Box>
+            <Box className="card">
               <Typography level={"h3"}>Hi, I'm Karalynn Jones</Typography>
               <Typography level={"h4"}>I'm a Developer & Designer</Typography>
+              <Typography level={"body-lg"}>
+                I make intuitive and beautiful applications for the web.
+              </Typography>
+              <Typography>-About</Typography>
+              <Typography>-Experience</Typography>
+              <Typography>-Projects</Typography>
             </Box>
-            <Typography>
-              <Link href="https://github.com/KaralynnJ" target="_blank">
-                <FontAwesomeIcon icon={faGithub} />
-              </Link>
-            </Typography>
-            <Typography>
-              <Link
-                href="https://ca.linkedin.com/in/karalynnmjones"
-                target="_blank"
-              >
-                <FontAwesomeIcon icon={faLinkedin} />
-              </Link>
-            </Typography>
-            <Box>
+            <Stack direction={"row"} spacing={2}>
+              <Typography>
+                <Link href="https://github.com/KaralynnJ" target="_blank">
+                  <FontAwesomeIcon icon={faGithub} />
+                </Link>
+              </Typography>
+              <Typography>
+                <Link
+                  href="https://ca.linkedin.com/in/karalynnmjones"
+                  target="_blank"
+                >
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </Link>
+              </Typography>
+            </Stack>
+            {/* <Box>
               <Typography variant={"h2"}>Skills</Typography>
               <Typography variant={"h3"}>Programming Languages</Typography>
               <Chip color="primary">React</Chip>
@@ -54,7 +62,7 @@ const Title = () => {
               <Chip color="primary">Figma</Chip>
               <Chip color="primary">JIRA</Chip>
               <Chip color="primary">Firebase</Chip>
-            </Box>
+            </Box> */}
           </Stack>
         </Grid>
         <Grid md={6}>
@@ -92,7 +100,57 @@ const Title = () => {
           </Box>
         </Grid>
       </Grid>
-      <Stack></Stack>
+      <Stack>
+        <Typography level={"title-md"}>
+          <Link href="https://www.ziiware.com/ziizii-mobile-ordering">
+            ZZ Mobile Ordering
+          </Link>
+        </Typography>
+        <Typography>
+          Design new screens focused on performance, experience and modern UI.
+          Work closely with cross-functional teams, including developers and
+          sales representatives, to solve customer pain points and improve the
+          design.
+        </Typography>
+        <Stack direction={"row"}>
+          <Chip>Figma</Chip>
+        </Stack>
+
+        <Typography level={"title-md"}>ZZ Web Ordering</Typography>
+        <Typography>
+          Design, build and ship a new Shopify-esque storefront website that
+          supports owner customizations. Lead development from scratch,
+          delivering a modern, modular interface with flexible, component-driven
+          styling and custom theming.
+        </Typography>
+        <Stack direction={"row"}>
+          <Chip>Typescript</Chip>
+          <Chip>React</Chip>
+          <Chip>Redux</Chip>
+          <Chip>HTML & CSS</Chip>
+          <Chip>Material UI</Chip>
+          <Chip>Figma</Chip>
+        </Stack>
+        <Typography level={"title-md"}>
+          <Link href="https://ats-service.com/illuminate-manufacturing-intelligence">
+            Illuminate MI
+          </Link>
+        </Typography>
+        <Typography>
+          Modernize an internal dashboarding application for industrial
+          equipment. Lead the front end effort to upgrade the tech stack to be
+          scalable and maintainable. Work closely with the back end teams to
+          ensure feature parity between versions and repay technical debt.
+        </Typography>
+        <Stack direction={"row"}>
+          <Chip>Typescript</Chip>
+          <Chip>React</Chip>
+          <Chip>Redux</Chip>
+          <Chip>Kendo UI</Chip>
+          <Chip>HTML & CSS</Chip>
+          <Chip>Figma</Chip>
+        </Stack>
+      </Stack>
       <Stack>
         <Box>
           <Typography variant={"h2"}>2024-Present UI/UX Specialist</Typography>

@@ -1,5 +1,5 @@
 import { CssVarsProvider, Stack } from "@mui/joy";
-import "./App.css";
+import "./App.scss";
 import Title from "./components/Title";
 
 function App() {
