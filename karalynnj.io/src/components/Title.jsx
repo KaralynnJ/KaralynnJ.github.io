@@ -5,12 +5,13 @@ import { Box, Chip, Grid, Link, Stack, Typography } from "@mui/joy";
 const Title = () => {
   return (
     <div>
-      <Grid container spacing={2}>
+      <Grid container spacing={"2rem"}>
         <Grid md={6}>
-          <Stack direction={"column"}>
+          <Stack direction={"column"} spacing={"1rem"}>
             <Box className="card">
-              <Typography level={"h3"}>Hi, I'm Karalynn Jones</Typography>
-              <Typography level={"h4"}>I'm a Developer & Designer</Typography>
+              <Typography level={"h4"}>Hi, I'm</Typography>
+              <Typography level={"h1"}>Karalynn Jones</Typography>
+              <Typography level={"h3"}>Developer & Designer</Typography>
               <Typography level={"body-lg"}>
                 I make intuitive and beautiful applications for the web.
               </Typography>
@@ -33,36 +34,6 @@ const Title = () => {
                 </Link>
               </Typography>
             </Stack>
-            {/* <Box>
-              <Typography variant={"h2"}>Skills</Typography>
-              <Typography variant={"h3"}>Programming Languages</Typography>
-              <Chip color="primary">React</Chip>
-              <Chip color="primary">Javascript</Chip>
-              <Chip color="primary">Typescript</Chip>
-              <Chip color="primary">HTML</Chip>
-              <Chip color="primary">CSS</Chip>
-              <Chip color="primary">SASS</Chip>
-              <Chip color="primary">SQL</Chip>
-              <Chip color="primary">C#</Chip>
-              <Typography variant={"h3"}>Libraries & Frameworks</Typography>
-              <Chip color="primary">React</Chip>
-              <Chip color="primary">Redux</Chip>
-              <Chip color="primary">Next.js</Chip>
-              <Chip color="primary">AngularJS</Chip>
-              <Chip color="primary">Jest</Chip>
-              <Chip color="primary">Vite</Chip>
-              <Chip color="primary">React Testing Library</Chip>
-              <Chip color="primary">Marterial UI</Chip>
-              <Chip color="primary">Bootstrap</Chip>
-              <Chip color="primary">Tailwind</Chip>
-              <Chip color="primary">REST APIs</Chip>
-              <Typography variant={"h3"}>Tools & Platforms</Typography>
-              <Chip color="primary">Git</Chip>
-              <Chip color="primary">Github</Chip>
-              <Chip color="primary">Figma</Chip>
-              <Chip color="primary">JIRA</Chip>
-              <Chip color="primary">Firebase</Chip>
-            </Box> */}
           </Stack>
         </Grid>
         <Grid md={6}>

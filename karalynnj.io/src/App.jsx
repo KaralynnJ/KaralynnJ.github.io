@@ -9,7 +9,7 @@ function App() {
         spacing={2}
         alignItems="center"
         justifyContent="center"
-        height="100vh"
+        margin={"3rem"}
       >
         <Title />
       </Stack>
