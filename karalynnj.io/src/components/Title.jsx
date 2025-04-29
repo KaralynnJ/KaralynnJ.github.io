@@ -5,12 +5,23 @@ import { Box, Chip, Grid, Link, Stack, Typography } from "@mui/joy";
 const Title = () => {
   return (
     <div>
+      <Box className="hero">
+        <Stack>
+          <Typography
+            level="h1"
+            className={"text-neon"}
+            data-text="Karalynn Jones"
+          >
+            Karalynn Jones
+          </Typography>
+        </Stack>
+      </Box>
       <Grid container spacing={"2rem"}>
         <Grid md={6}>
           <Stack direction={"column"} spacing={"1rem"}>
-            <Box className="card">
+            <Box className="card block-neon">
               <Typography level={"h4"}>Hi, I'm</Typography>
-              <Typography level={"h1"}>Karalynn Jones</Typography>
+              <Typography level={"h2"}>Karalynn Jones</Typography>
               <Typography level={"h3"}>Developer & Designer</Typography>
               <Typography level={"body-lg"}>
                 I make intuitive and beautiful applications for the web.
