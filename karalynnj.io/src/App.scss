@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap");
+
 @property --gradient-angle {
   syntax: "<angle>";
   initial-value: 0deg;
@@ -7,6 +9,7 @@
 :root {
   --card-color: #18181b;
   --background-color: #18181b;
+  --text-color: #fff;
   --clr-3: #0ea5e9;
   --clr-4: #8b5cf6;
   --clr-5: #d946ef;
@@ -14,84 +17,69 @@
 
 body {
   background: var(--background-color);
+  margin: 0;
 }
 
-.card {
-  border-radius: 0.5rem;
-  padding: 1rem;
+.parallax {
+  height: 100vh;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  perspective: 1px;
 }
 
-.text-neon {
-  font-variant: small-caps;
-  font-size: 50px;
-  font-weight: 800;
+.parallax {
+  background-image: url("src/assets/neon-dark.jpg");
+
+  /* Set a specific height */
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero {
+  width: fit-content;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
+
+.hero > div {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero h1,
+.hero h3 {
+  font-family: "Oxanium", sans-serif !important;
+  color: var(--text-color);
   text-align: center;
-  -webkit-background-clip: text;
+  text-shadow: #8b5cf6 0px 0px 10px;
 }
 
-.text-neon {
-  color: var(--background-color) !important;
-  background: conic-gradient(
-    from var(--gradient-angle),
-    var(--clr-3),
-    var(--clr-4),
-    var(--clr-5),
-    var(--clr-4),
-    var(--clr-3)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 4px transparent;
-  animation: rotation 10s linear infinite;
+.hero h1 {
+  font-size: 5rem;
 }
 
-.text-neon::before {
-  background: conic-gradient(
-    from var(--gradient-angle),
-    var(--clr-3),
-    var(--clr-4),
-    var(--clr-5),
-    var(--clr-4),
-    var(--clr-3)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 8px transparent;
-  color: #232d2d;
-  filter: blur(0.5rem);
-  animation: rotation 10s linear infinite;
+.hero h3 {
+  font-size: 3rem;
 }
 
-.text-neon::before {
-  content: attr(data-text);
-  position: absolute;
-  z-index: -1;
-}
-
-// .text-neon {
-//   background: conic-gradient(
-//     from var(--gradient-angle),
-//     var(--clr-3),
-//     var(--clr-4),
-//     var(--clr-5),
-//     var(--clr-4),
-//     var(--clr-3)
-//   );
-//   -webkit-background-clip: text;
-//   -webkit-text-stroke: 4px transparent;
-//   color: var(--background-color) !important;
-//   animation: rotation 10s linear infinite;
-// }
-
-// .text-neon::after {
-//   filter: blur(0.5rem);
-// }
-
-.block-neon {
+.break {
   background-color: var(--card-color);
   position: relative;
 }
 
-.block-neon::after,
-.block-neon::before {
+.break::after,
+.break::before {
   content: " ";
   position: absolute;
   inset: -0.25rem;
@@ -108,7 +96,7 @@ body {
   animation: rotation 10s linear infinite;
 }
 
-.block-neon::after {
+.break::after {
   z-index: -1;
   filter: blur(0.5rem);
 }
