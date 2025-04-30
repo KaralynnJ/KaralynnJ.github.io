@@ -74,18 +74,33 @@ body {
 }
 
 .break {
+  background: linear-gradient(
+    90deg,
+    var(--clr-3),
+    var(--clr-4),
+    var(--clr-5),
+    var(--clr-4),
+    var(--clr-3)
+  );
+  background-size: 200% auto;
+  position: relative;
+  width: 100%;
+  height: 20px;
+  animation: linear-neon 5s ease alternate infinite;
+}
+
+.neon {
   background-color: var(--card-color);
   position: relative;
 }
 
-.break::after,
-.break::before {
+.neon::after,
+.neon::before {
   content: " ";
   position: absolute;
   inset: -0.25rem;
   z-index: -1;
-  background: conic-gradient(
-    from var(--gradient-angle),
+  background: linear-gradient(
     var(--clr-3),
     var(--clr-4),
     var(--clr-5),
@@ -96,9 +111,18 @@ body {
   animation: rotation 10s linear infinite;
 }
 
-.break::after {
+.neon::after {
   z-index: -1;
   filter: blur(0.5rem);
+}
+
+@keyframes linear-neon {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: 91% 100%;
+  }
 }
 
 @keyframes rotation {
