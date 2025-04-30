@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap");
 
 @property --gradient-angle {
   syntax: "<angle>";
@@ -13,6 +14,9 @@
   --clr-3: #0ea5e9;
   --clr-4: #8b5cf6;
   --clr-5: #d946ef;
+  --lightblue: #11dff2;
+  --pink: #fa59e9;
+  --purple: #3f0754;
 }
 
 body {
@@ -21,7 +25,7 @@ body {
 }
 
 .parallax {
-  height: 100vh;
+  height: 95vh;
 
   overflow-x: hidden;
   overflow-y: auto;
@@ -42,51 +46,84 @@ body {
   background-size: cover;
 }
 
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px 50px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--lightblue);
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav a:hover,
+.nav a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.nav a svg {
+  font-size: 1.5rem;
+}
+
 .hero {
   width: fit-content;
   position: relative;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -60%);
+  transform: translate(-50%, -100%);
 }
 
 .hero > div {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.hero h1,
-.hero h3 {
-  font-family: "Oxanium", sans-serif !important;
-  color: var(--text-color);
-  text-align: center;
-  text-shadow: #8b5cf6 0px 0px 10px;
+  padding: 10px;
 }
 
 .hero h1 {
+  font-family: "Oxanium", sans-serif !important;
+  color: transparent;
+  background: linear-gradient(
+    to bottom,
+    var(--lightblue) 10%,
+    white 40%,
+    var(--purple) 45%,
+    var(--pink) 55%,
+    white 85%
+  );
+  text-align: center;
+  background-clip: text;
   font-size: 5rem;
+  filter: drop-shadow(3px 3px var(--background-color))
+    drop-shadow(1px 1px var(--pink));
 }
 
 .hero h3 {
+  font-family: "Mr Dafoe", cursive !important;
+  background: linear-gradient(to bottom, #11dff2, white 95%);
+  color: transparent;
+  background-clip: text;
+  text-align: center;
   font-size: 3rem;
+  z-index: 10;
+  transform: rotate(-1deg) translateY(-60px);
+  letter-spacing: 0.25rem;
+  filter: drop-shadow(3px 3px var(--background-color))
+    drop-shadow(1px 1px var(--clr-5));
 }
 
 .break {
-  background: linear-gradient(
-    90deg,
-    var(--clr-3),
-    var(--clr-4),
-    var(--clr-5),
-    var(--clr-4),
-    var(--clr-3)
-  );
+  background: linear-gradient(to bottom, var(--pink), white, var(--pink));
   background-size: 200% auto;
   position: relative;
   width: 100%;
-  height: 20px;
-  animation: linear-neon 5s ease alternate infinite;
+  height: 5px;
+  box-shadow: (var(--pink) 0px 0px 10px 2px), (var(--pink) 0px -10px 50px 1px);
+}
+
+.content {
+  padding: 32px;
 }
 
 .neon {
@@ -100,7 +137,8 @@ body {
   position: absolute;
   inset: -0.25rem;
   z-index: -1;
-  background: linear-gradient(
+  background: conic-gradient(
+    from var(--gradient-angle),
     var(--clr-3),
     var(--clr-4),
     var(--clr-5),

@@ -6,17 +6,39 @@ const Title = () => {
   return (
     <div>
       <div class="parallax">
+        <div className="nav">
+          <Stack direction={"row"} spacing={"1rem"}>
+            <Typography>
+              <Link>resume</Link>
+            </Typography>
+            <Typography>
+              <Link href="https://github.com/KaralynnJ" target="_blank">
+                <FontAwesomeIcon icon={faGithub} />
+              </Link>
+            </Typography>
+            <Typography>
+              <Link
+                href="https://ca.linkedin.com/in/karalynnmjones"
+                target="_blank"
+              >
+                <FontAwesomeIcon icon={faLinkedin} />
+              </Link>
+            </Typography>
+          </Stack>
+        </div>
         <div className="hero">
           <Stack>
-            <Typography level={"h1"}>Karalynn Jones</Typography>
-            <Typography level={"h3"}>Developer & Designer</Typography>
+            <Typography level={"h1"} data-text="KARALYNN JONES">
+              KARALYNN JONES
+            </Typography>
+            <Typography level={"h3"}>Developer + Designer</Typography>
           </Stack>
         </div>
       </div>
       <div className="break" />
       <div class="about"></div>
-      <div>
-        <Grid container spacing={"2rem"}>
+      <div className="content">
+        <Grid container>
           <Grid md={6}>
             <Stack direction={"column"} spacing={"1rem"}>
               <Box className="card">
@@ -30,21 +52,6 @@ const Title = () => {
                 <Typography>-Experience</Typography>
                 <Typography>-Projects</Typography>
               </Box>
-              <Stack direction={"row"} spacing={2}>
-                <Typography>
-                  <Link href="https://github.com/KaralynnJ" target="_blank">
-                    <FontAwesomeIcon icon={faGithub} />
-                  </Link>
-                </Typography>
-                <Typography>
-                  <Link
-                    href="https://ca.linkedin.com/in/karalynnmjones"
-                    target="_blank"
-                  >
-                    <FontAwesomeIcon icon={faLinkedin} />
-                  </Link>
-                </Typography>
-              </Stack>
             </Stack>
           </Grid>
           <Grid md={6}>
@@ -132,13 +139,6 @@ const Title = () => {
             <Chip>HTML & CSS</Chip>
             <Chip>Figma</Chip>
           </Stack>
-        </Stack>
-        <Stack>
-          <Box>
-            <Typography variant={"h2"}>
-              2024-Present UI/UX Specialist
-            </Typography>
-          </Box>
         </Stack>
       </div>
     </div>
