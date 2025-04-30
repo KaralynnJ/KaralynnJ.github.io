@@ -77,10 +77,6 @@ body {
   transform: translate(-50%, -100%);
 }
 
-.hero > div {
-  padding: 10px;
-}
-
 .hero h1 {
   font-family: "Oxanium", sans-serif !important;
   color: transparent;
@@ -101,16 +97,26 @@ body {
 
 .hero h3 {
   font-family: "Mr Dafoe", cursive !important;
-  background: linear-gradient(to bottom, #11dff2, white 95%);
+  background: linear-gradient(to bottom, #11dff2 25%, white 85%);
   color: transparent;
   background-clip: text;
   text-align: center;
   font-size: 3rem;
   z-index: 10;
-  transform: rotate(-1deg) translateY(-60px);
+  transform: rotate(-1deg) translateY(-3.5rem);
   letter-spacing: 0.25rem;
   filter: drop-shadow(3px 3px var(--background-color))
-    drop-shadow(1px 1px var(--clr-5));
+    drop-shadow(1px 1px var(--pink));
+}
+
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero h3 {
+    transform: rotate(-1deg) translateY(-1.75rem);
+    font-size: 1.5rem;
+  }
 }
 
 .break {

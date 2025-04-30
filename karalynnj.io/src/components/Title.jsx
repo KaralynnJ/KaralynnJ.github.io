@@ -112,7 +112,7 @@ const Title = () => {
             delivering a modern, modular interface with flexible,
             component-driven styling and custom theming.
           </Typography>
-          <Stack direction={"row"}>
+          <Stack direction={"row"} flexWrap={"wrap"}>
             <Chip>Typescript</Chip>
             <Chip>React</Chip>
             <Chip>Redux</Chip>
@@ -131,7 +131,7 @@ const Title = () => {
             scalable and maintainable. Work closely with the back end teams to
             ensure feature parity between versions and repay technical debt.
           </Typography>
-          <Stack direction={"row"}>
+          <Stack direction={"row"} flexWrap={"wrap"}>
             <Chip>Typescript</Chip>
             <Chip>React</Chip>
             <Chip>Redux</Chip>
