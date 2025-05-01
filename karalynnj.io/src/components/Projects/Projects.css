@@ -1,0 +1,48 @@
+.project-terminal {
+  background: #0a0a0a;
+  border: 1px solid #222;
+  font-weight: semi-bold;
+  padding: 2rem;
+  font-family: "Courier New", monospace;
+  color: #cfcfcf;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(0, 255, 231, 0.1);
+  height: 75vh;
+}
+
+.terminal-line {
+  display: flex;
+  align-items: center;
+  font-family: "Courier New", monospace;
+  white-space: pre;
+  color: #cfcfcf;
+  margin: 0.5rem 0;
+  cursor: default;
+}
+
+.prompt {
+  color: var(--terminal-cyan);
+  margin-right: 0.5ch;
+}
+
+.program-title {
+  color: var(--terminal-pink);
+}
+
+.project-title {
+  color: var(--terminal-green);
+}
+
+.project-select:hover .clickable-title,
+.project-select:hover .title {
+  background-color: var(--terminal-blue);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.clickable-title {
+  transition: color 0.2s ease;
+}
