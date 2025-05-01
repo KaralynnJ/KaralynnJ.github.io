@@ -28,6 +28,9 @@ const Projects = () => {
   const [bootStage, setBootStage] = useState(0);
   const [loadingDots, setLoadingDots] = useState("");
   const [visibleProjectCount, setVisibleProjectCount] = useState(0);
+  const [viewMode, setViewMode] = useState("list"); // "list" | "detail"
+  const [visibleDetailLineCount, setVisibleDetailLineCount] = useState(0);
+
   let steps = 0;
 
   useEffect(() => {
@@ -85,6 +88,19 @@ const Projects = () => {
     }
   }, [bootStage]);
 
+  const handleBack = () => {
+    setViewMode("list");
+    setVisibleProjectCount(0); // reset line count
+    setTimeout(() => {
+      let index = 0;
+      const interval = setInterval(() => {
+        index++;
+        setVisibleProjectCount(index);
+        if (index >= projectList.length) clearInterval(interval);
+      }, 300);
+    }, 300); // small delay before list reloads
+  };
+
   return (
     <div className="project-terminal">
       {bootStage >= 0 && (
@@ -114,25 +130,42 @@ const Projects = () => {
             project to continue.
           </div>
 
-          {projectList.map(
-            (proj, idx) =>
-              idx < visibleProjectCount && (
-                <div key={idx}>
-                  {selectedIndex === idx ? (
-                    <ProjectCard {...proj} />
-                  ) : (
+          {viewMode === "list" &&
+            projectList.map(
+              (proj, idx) =>
+                idx < visibleProjectCount && (
+                  <div key={idx}>
                     <div
                       className="terminal-line project-select"
-                      onClick={() => setSelectedIndex(idx)}
+                      onClick={() => {
+                        setSelectedIndex(idx);
+                        setViewMode("detail");
+                        setVisibleDetailLineCount(0);
+                      }}
                     >
                       <span className="prompt">&gt; </span>
-                      <span className="clickable-title">
-                        View <span className="project-title">{proj.title}</span>
-                      </span>
+                      <span className="clickable-title">View {proj.title}</span>
                     </div>
-                  )}
-                </div>
-              )
+                  </div>
+                )
+            )}
+
+          {viewMode === "detail" && selectedIndex !== null && (
+            <ProjectCard
+              project={projectList[selectedIndex]}
+              onBack={() => {
+                setViewMode("list");
+                setVisibleProjectCount(0);
+                setTimeout(() => {
+                  let index = 0;
+                  const interval = setInterval(() => {
+                    index++;
+                    setVisibleProjectCount(index);
+                    if (index >= projectList.length) clearInterval(interval);
+                  }, 300);
+                }, 300);
+              }}
+            />
           )}
         </>
       )}

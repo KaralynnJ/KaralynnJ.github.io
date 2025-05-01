@@ -77,3 +77,26 @@
   color: var(--terminal-pink);
   margin-right: 0.5ch;
 }
+
+.cursor-block {
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+  font-weight: bold;
+}
+
+.clickable:hover {
+  cursor: pointer;
+  color: var(--terminal-cyan);
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
