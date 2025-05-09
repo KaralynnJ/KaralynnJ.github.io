@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { formatEndingLine, formatTitleLine } from "../../utils/utils";
 import "./ProjectCard.css";
 
 const ProjectCard = ({ project, onBack }) => {
@@ -9,25 +10,41 @@ const ProjectCard = ({ project, onBack }) => {
 
   const detailLines = [
     `Opening ${project.title}...`,
-    `Description: ${project.description}`,
-    `Stack: ${project.stack}`,
-    `Link: ${project.link}`,
-    "Type 'back' to return.",
+    "",
+    `${formatTitleLine(project.title)}`,
+    "",
+    ...project.description,
+    "",
+    `Role:    ${project.role}`,
+    project.stack ? `Stack:   ${project.stack}` : `Tools:   ${project.tools}`,
+    `Link:    ${project.link}`,
+    "",
+    `${formatEndingLine(60)}`,
+    "",
+    "Type 'back' to return to the project list.",
   ];
 
   useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      index++;
-      setVisibleLines(index);
+    let index = 1; // First line is shown immediately
+    setVisibleLines(1);
 
-      if (index >= detailLines.length) {
-        clearInterval(interval);
-        setTimeout(() => setTypingBack(true), 500);
-      }
-    }, 500);
+    const firstGap = setTimeout(() => {
+      const interval = setInterval(() => {
+        index++;
+        setVisibleLines(index);
 
-    return () => clearInterval(interval);
+        if (index >= detailLines.length) {
+          clearInterval(interval);
+          setTimeout(() => setTypingBack(true), 500);
+        }
+      }, 150); // normal delay for the rest
+
+      // Clean up interval
+      return () => clearInterval(interval);
+    }, 500); // longer delay after the first line
+
+    // Clean up timeout
+    return () => clearTimeout(firstGap);
   }, [project]);
 
   useEffect(() => {
@@ -47,11 +64,40 @@ const ProjectCard = ({ project, onBack }) => {
     return () => clearInterval(typeInterval);
   }, [typingBack]);
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Enter") {
+        onBack();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   return (
     <>
       {detailLines.slice(0, visibleLines).map((line, i) => (
         <div className="terminal-line" key={i}>
-          <span className="prompt">&gt; </span> {line}
+          <span className="prompt">&gt; </span>{" "}
+          {line.startsWith("Link: ") ? (
+            <>
+              Link:{" "}
+              <a
+                href={line.replace("Link: ", "")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="terminal-link"
+              >
+                {line.replace("Link: ", "")}
+              </a>
+            </>
+          ) : (
+            line
+          )}
         </div>
       ))}
 
