@@ -49,12 +49,18 @@ body {
 
 /* First parallax section */
 .parallax-hero {
-  background-image: url("src/assets/neon-dark.jpg");
+  background-image: url("/assets/neon-dark.jpg");
 }
 
 /* Second parallax section (About Me) */
 .parallax-about {
-  background-image: url("src/assets/car_sunset.jpg");
+  background: url("/assets/car_sunset.jpg"),
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  background-blend-mode: overlay;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .nav {
@@ -260,18 +266,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.parallax-bg {
-  background-image: url("/path/to/synthwave-skyline.jpg"); /* replace with actual path */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  transform: scale(1.05);
 }
 
 .about-content {
