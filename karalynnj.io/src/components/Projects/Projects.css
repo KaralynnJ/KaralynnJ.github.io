@@ -89,8 +89,12 @@
   font-family: "Courier New", monospace;
   white-space: pre;
   color: var(--terminal-words);
-  margin: 0.5rem 0;
+  margin: 0.5rem;
   cursor: default;
+}
+
+.terminal-line.space {
+  height: 1lh;
 }
 
 .terminal-line a {
@@ -108,7 +112,7 @@
 }
 
 .project-title {
-  color: var(--terminal-green);
+  color: var(--terminal-pink);
 }
 
 .project-select:hover .clickable-title,

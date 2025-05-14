@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ProjectCard from "../ProjectCard";
 import "./Projects.css";
 
@@ -6,26 +6,48 @@ const projectList = [
   {
     title: "IlluminateMI",
     description: [
-      "Design new screens focused on performance, experience and modern",
-      "UI. Work closely with cross-functional teams, including developers",
-      "and sales representatives, to solve customer pain points and",
-      "improve the design.",
+      "Modernized the design and future-proofed the tech stack of a legacy app. Created a unified",
+      "process for balancing new features with updating legacy code. Architected a micro frontend",
+      "solution and lead the development team through implementation. Built a design system and",
+      "component library.",
     ],
-    role: "Designer and Lead Frontend Developer",
-    tools: "Figma",
+    role: "Lead Frontend Developer and Designer",
+    stack: "React, Kendo UI, C#, MSSQL, Figma",
+    link: "https://illuminatemi.com",
+  },
+  {
+    title: "ZZ Web Ordering",
+    description: [
+      "Design and create a customizable e-commerce platform for business-to-business sales.",
+      "Lead development on the frontend, prioritizing user experience and performance.",
+      "Collaborate with backend developers to ensure seamless integration.",
+    ],
+    role: "Lead Frontend Developer and Designer",
+    stack: "React, Material UI, Hilla, Java, Spring Boot, MariaDB",
+    link: "https://www.ziiware.com",
+  },
+  {
+    title: "Portfolio Website",
+    description: [
+      "Design and develop my personal website. Clearly convey my skills and",
+      "experience. Showcase my work and projects. Provide a way for potential employers",
+      "to contact me. Incorporate my personality and interests.",
+    ],
+    role: "Frontend Developer and Designer",
+    stack: "React, Joy UI, Vite",
+    link: "https://karalynnj.github.io/",
+  },
+  {
+    title: "ZZ Mobile Ordering",
+    description: [
+      "Design a mobile app for business-to-business sales. Balance the needs",
+      "of various stakeholders. Create a user-friendly interface that presents dense information",
+      "clearly. Collaborate with developers to ensure seamless integration. Manage feedback from",
+      "multiple stakeholders to adjust design as required.",
+    ],
+    role: "Designer",
+    stack: "Figma, Flutter, Firebase",
     link: "https://www.ziiware.com/ziizii-mobile-ordering",
-  },
-  {
-    title: "InventoryTool",
-    description: "Internal tool for tracking inventory and restock cycles.",
-    stack: "Vue, Node, PostgreSQL",
-    link: "https://example.com/inventory",
-  },
-  {
-    title: "AnalyticsDash",
-    description: "Data dashboard with live metrics and export features.",
-    stack: "Next.js, D3.js, Supabase",
-    link: "https://example.com/analytics",
   },
 ];
 
@@ -149,30 +171,25 @@ const Projects = () => {
       <div ref={containerRef} className="project-terminal">
         {bootStage >= 0 && (
           <div className="terminal-line">
-            <span className="prompt">&gt;</span>
-            <span className="program-title"> SynthTerm v1.4 </span>
+            <span className="program-title">SynthTerm v1.4 </span>
             Initialized
           </div>
         )}
 
         {bootStage >= 1 && (
-          <div className="terminal-line">
-            <span className="prompt">&gt;</span> Verifying memory... OK
-          </div>
+          <div className="terminal-line">Verifying memory... OK</div>
         )}
 
         {bootStage === 2 && (
-          <div className="terminal-line">
-            <span className="prompt">&gt;</span> Loading{loadingDots}
-          </div>
+          <div className="terminal-line">Loading{loadingDots}</div>
         )}
 
         {bootStage >= 3 && (
           <>
             <div className="terminal-line">
-              <span className="prompt">&gt;</span> Projects loaded. Select a
-              project to continue.
+              Projects loaded. Select a project to continue.
             </div>
+            <div className="terminal-line space"></div>
 
             {viewMode === "list" &&
               projectList.map(
@@ -192,7 +209,8 @@ const Projects = () => {
                       >
                         <span className="prompt">&gt; </span>
                         <span className="clickable-title">
-                          View {proj.title}
+                          View{" "}
+                          <span className="project-title">{proj.title}</span>
                         </span>
                       </div>
                     </div>

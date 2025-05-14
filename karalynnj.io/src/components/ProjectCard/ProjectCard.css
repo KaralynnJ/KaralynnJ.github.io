@@ -89,6 +89,10 @@
   color: var(--terminal-cyan);
 }
 
+.highlight {
+  color: var(--terminal-pink);
+}
+
 @keyframes blink {
   0%,
   50%,

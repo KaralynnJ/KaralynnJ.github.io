@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { formatEndingLine, formatTitleLine } from "../../utils/utils";
+import { useEffect, useState } from "react";
+import FormattedEndLine from "../FormattedEndLine";
+import FormattedTitleLine from "../FornattedTitleLine";
 import "./ProjectCard.css";
 
 const ProjectCard = ({ project, onBack }) => {
@@ -11,7 +12,7 @@ const ProjectCard = ({ project, onBack }) => {
   const detailLines = [
     `Opening ${project.title}...`,
     "",
-    `${formatTitleLine(project.title)}`,
+    <FormattedTitleLine title={project.title} totalLength={100} />,
     "",
     ...project.description,
     "",
@@ -19,7 +20,7 @@ const ProjectCard = ({ project, onBack }) => {
     project.stack ? `Stack:   ${project.stack}` : `Tools:   ${project.tools}`,
     `Link:    ${project.link}`,
     "",
-    `${formatEndingLine(60)}`,
+    <FormattedEndLine totalLength={100} />,
     "",
     "Type 'back' to return to the project list.",
   ];
@@ -78,28 +79,40 @@ const ProjectCard = ({ project, onBack }) => {
     };
   }, []);
 
+  const renderLine = (line) => {
+    return (
+      <>
+        {line.startsWith("Link: ") ? (
+          <>
+            Link:{" "}
+            <a
+              href={line.replace("Link: ", "")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="terminal-link"
+            >
+              {line.replace("Link: ", "")}
+            </a>
+          </>
+        ) : (
+          line
+        )}
+      </>
+    );
+  };
+
   return (
     <>
-      {detailLines.slice(0, visibleLines).map((line, i) => (
-        <div className="terminal-line" key={i}>
-          <span className="prompt">&gt; </span>{" "}
-          {line.startsWith("Link: ") ? (
-            <>
-              Link:{" "}
-              <a
-                href={line.replace("Link: ", "")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="terminal-link"
-              >
-                {line.replace("Link: ", "")}
-              </a>
-            </>
-          ) : (
-            line
-          )}
-        </div>
-      ))}
+      {detailLines.slice(0, visibleLines).map((line, i) => {
+        const isJSX = typeof line !== "string";
+
+        return (
+          <div className="terminal-line" key={i}>
+            <span className="prompt">&gt; </span>
+            {isJSX ? line : renderLine(line)}
+          </div>
+        );
+      })}
 
       {typingBack && (
         <div
