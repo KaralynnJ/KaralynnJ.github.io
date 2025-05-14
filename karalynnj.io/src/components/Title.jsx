@@ -10,7 +10,13 @@ const Title = () => {
         <div className="nav">
           <Stack direction={"row"} spacing={"1rem"}>
             <Typography>
-              <Link>resume</Link>
+              <a
+                href="/public/Jones Karalynn Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                resume
+              </a>
             </Typography>
             <Typography>
               <Link href="https://github.com/KaralynnJ" target="_blank">
