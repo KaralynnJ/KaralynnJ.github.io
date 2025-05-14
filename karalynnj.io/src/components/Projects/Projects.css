@@ -1,0 +1,151 @@
+.terminal-panel {
+  background: #2a2a2a;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6),
+    inset 0 2px 4px rgba(255, 255, 255, 0.05);
+  display: inline-block;
+}
+
+.project-terminal {
+  background-color: #0a0a0a;
+  color: var(--terminal-words);
+  font-family: "Courier New", monospace;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: inset 0 0 30px rgba(0, 204, 255, 0.075),
+    0 0 10px rgba(0, 195, 255, 0.1);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6),
+    inset 0 0 20px rgba(0, 255, 255, 0.075), 0 0 15px rgba(0, 0, 0, 0.5);
+
+  position: relative;
+  overflow: hidden;
+  min-height: 75vh;
+}
+
+@media screen and (max-width: 768px) {
+  .project-terminal {
+    padding: 0.75rem;
+  }
+}
+
+/* Subtle scanlines */
+.project-terminal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 0, 0.05) 1px,
+    rgba(255, 0, 0, 0.05) 2px,
+    rgba(0, 0, 255, 0.05) 3px
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Slight screen curvature */
+.project-terminal::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.025) 60%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Optional flicker animation (VERY subtle) */
+@keyframes flicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    opacity: 1;
+  }
+  20%,
+  22%,
+  24%,
+  55% {
+    opacity: 0.99;
+  }
+}
+
+.project-terminal {
+  animation: flicker 2s infinite;
+}
+
+.terminal-line {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  font-family: "Courier New", monospace;
+  /* white-space: pre; */
+  color: var(--terminal-words);
+  margin: 0.5rem;
+  cursor: default;
+  white-space: pre-wrap;
+  word-break: break-word;
+  word-break: normal;
+  line-height: 1.4;
+}
+
+.terminal-line.space {
+  height: 1lh;
+}
+
+.terminal-line a {
+  color: var(--terminal-cyan);
+  text-decoration: none;
+}
+
+.prompt {
+  color: var(--terminal-cyan);
+  margin-right: 0.5ch;
+}
+
+.program-title {
+  color: var(--terminal-pink);
+}
+
+.project-title {
+  color: var(--terminal-pink);
+}
+
+.project-select:hover .clickable-title,
+.project-select:hover .title {
+  background-color: var(--terminal-blue);
+  color: var(--terminal-words);
+  cursor: pointer;
+}
+
+.cursor {
+  color: var(--terminal-cyan);
+}
+
+.clickable-title {
+  transition: color 0.2s ease;
+}
+
+.project-select {
+  color: var(--terminal-words);
+  cursor: pointer;
+}
+
+.project-select.selected {
+  background-color: var(--terminal-blue);
+  color: var(--terminal-words);
+}
