@@ -20,7 +20,13 @@
 
   position: relative;
   overflow: hidden;
-  height: 75vh;
+  min-height: 75vh;
+}
+
+@media screen and (max-width: 768px) {
+  .project-terminal {
+    padding: 0.75rem;
+  }
 }
 
 /* Subtle scanlines */
@@ -87,10 +93,14 @@
   width: fit-content;
   align-items: center;
   font-family: "Courier New", monospace;
-  white-space: pre;
+  /* white-space: pre; */
   color: var(--terminal-words);
   margin: 0.5rem;
   cursor: default;
+  white-space: pre-wrap;
+  word-break: break-word;
+  word-break: normal;
+  line-height: 1.4;
 }
 
 .terminal-line.space {
@@ -120,6 +130,10 @@
   background-color: var(--terminal-blue);
   color: var(--terminal-words);
   cursor: pointer;
+}
+
+.cursor {
+  color: var(--terminal-cyan);
 }
 
 .clickable-title {

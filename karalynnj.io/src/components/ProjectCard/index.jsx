@@ -1,6 +1,10 @@
+import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import FormattedEndLine from "../FormattedEndLine";
 import FormattedTitleLine from "../FornattedTitleLine";
+import { splitIntoLines } from "../utils/utils";
 import "./ProjectCard.css";
 
 const ProjectCard = ({ project, onBack }) => {
@@ -8,19 +12,27 @@ const ProjectCard = ({ project, onBack }) => {
   const [typedBack, setTypedBack] = useState("");
   const [typingBack, setTypingBack] = useState(false);
   const [doneTypingBack, setDoneTypingBack] = useState(false);
+  const isDesktopOrLaptop = useMediaQuery({ minWidth: 1000 });
+  const splitLines = splitIntoLines(
+    project.description,
+    isDesktopOrLaptop ? 100 : 25
+  );
 
   const detailLines = [
     `Opening ${project.title}...`,
     "",
-    <FormattedTitleLine title={project.title} totalLength={100} />,
+    <FormattedTitleLine
+      title={project.title}
+      totalLength={isDesktopOrLaptop ? 100 : 25}
+    />,
     "",
-    ...project.description,
+    ...splitLines,
     "",
     `Role:    ${project.role}`,
     project.stack ? `Stack:   ${project.stack}` : `Tools:   ${project.tools}`,
     `Link:    ${project.link}`,
     "",
-    <FormattedEndLine totalLength={100} />,
+    <FormattedEndLine totalLength={isDesktopOrLaptop ? 100 : 25} />,
     "",
     "Type 'back' to return to the project list.",
   ];
@@ -80,25 +92,47 @@ const ProjectCard = ({ project, onBack }) => {
   }, []);
 
   const renderLine = (line) => {
-    return (
-      <>
-        {line.startsWith("Link: ") ? (
-          <>
-            Link:{" "}
-            <a
-              href={line.replace("Link: ", "")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="terminal-link"
-            >
-              {line.replace("Link: ", "")}
-            </a>
-          </>
-        ) : (
-          line
-        )}
-      </>
-    );
+    if (isDesktopOrLaptop) {
+      return (
+        <>
+          {line.startsWith("Link: ") ? (
+            <>
+              Link:{" "}
+              <a
+                href={line.replace("Link: ", "")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="terminal-link"
+              >
+                {line.replace("Link: ", "")}
+              </a>
+            </>
+          ) : (
+            line
+          )}
+        </>
+      );
+    } else {
+      return (
+        <>
+          {line.startsWith("Link: ") ? (
+            <>
+              Link:{" "}
+              <a
+                href={line.replace("Link: ", "")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="terminal-link"
+              >
+                <FontAwesomeIcon icon={faLink} />
+              </a>
+            </>
+          ) : (
+            line
+          )}
+        </>
+      );
+    }
   };
 
   return (
@@ -108,12 +142,12 @@ const ProjectCard = ({ project, onBack }) => {
 
         return (
           <div className="terminal-line" key={i}>
-            <span className="prompt">&gt; </span>
             {isJSX ? line : renderLine(line)}
           </div>
         );
       })}
 
+      <div className="terminal-line space"></div>
       {typingBack && (
         <div
           className={`terminal-line project-select clickable`}

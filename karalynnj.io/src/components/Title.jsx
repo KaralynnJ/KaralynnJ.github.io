@@ -1,12 +1,12 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import Projects from "../components/Projects";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Box, Chip, Grid, Link, Stack, Typography } from "@mui/joy";
+import { Box, Link, Stack, Typography } from "@mui/joy";
+import Projects from "../components/Projects";
 
 const Title = () => {
   return (
     <div>
-      <div className="parallax">
+      <div className="parallax parallax-hero">
         <div className="nav">
           <Stack direction={"row"} spacing={"1rem"}>
             <Typography>
@@ -36,97 +36,53 @@ const Title = () => {
           </Stack>
         </div>
       </div>
-      <div className="break" />
+      <div className="break-top" />
       <div className="projects">
         <Stack>
           <Projects />
-
-          <div className="card">
-            <h3 className="typing">
-              <span className="text">ZZ Mobile Ordering</span>
-              <span className="cursor">█</span>
-            </h3>
-
-            <Link href="https://www.ziiware.com/ziizii-mobile-ordering"> </Link>
-            <Typography>
-              Design new screens focused on performance, experience and modern
-              UI. Work closely with cross-functional teams, including developers
-              and sales representatives, to solve customer pain points and
-              improve the design.
-            </Typography>
-            <Stack direction={"row"}>
-              <Chip>Figma</Chip>
-            </Stack>
-          </div>
-
-          <Typography level={"title-md"}>ZZ Web Ordering</Typography>
-          <Typography>
-            Design, build and ship a new Shopify-esque storefront website that
-            supports owner customizations. Lead development from scratch,
-            delivering a modern, modular interface with flexible,
-            component-driven styling and custom theming.
-          </Typography>
-          <Stack direction={"row"} flexWrap={"wrap"}>
-            <Chip>Typescript</Chip>
-            <Chip>React</Chip>
-            <Chip>Redux</Chip>
-            <Chip>HTML & CSS</Chip>
-            <Chip>Material UI</Chip>
-            <Chip>Figma</Chip>
-          </Stack>
-          <Typography level={"title-md"}>
-            <Link href="https://ats-service.com/illuminate-manufacturing-intelligence">
-              Illuminate MI
-            </Link>
-          </Typography>
-          <Typography>
-            Modernize an internal dashboarding application for industrial
-            equipment. Lead the front end effort to upgrade the tech stack to be
-            scalable and maintainable. Work closely with the back end teams to
-            ensure feature parity between versions and repay technical debt.
-          </Typography>
-          <Stack direction={"row"} flexWrap={"wrap"}>
-            <Chip>Typescript</Chip>
-            <Chip>React</Chip>
-            <Chip>Redux</Chip>
-            <Chip>Kendo UI</Chip>
-            <Chip>HTML & CSS</Chip>
-            <Chip>Figma</Chip>
-          </Stack>
         </Stack>
       </div>
-      <div className="about">
-        <Box>
-          <Typography>
-            I'm a software engineer with a passion for creating beautiful and
-            functional web applications. I enjoy making beautiful and useful
-            applications come to life. Whether it's implementing an existing
-            design or creating a new one, I love the challenge of turning ideas
-            into reality. I believe that things can be beautiful and funcitonal
-            at the same time.
-          </Typography>
-          <Typography>
-            Currently I'm a UI/UX Specialist at Ziiware, where I design mobile
-            and web interfaces and develop front-end applications. I am
-            designing and creating our new e-commerce based website using Hilla,
-            React and Material UI, focusing on leveraging existing standards for
-            shopping based sites. I am also modernizing the design of Ziiware's
-            mobile application to focus on user experience and performance.
-          </Typography>
-          <Typography>
-            In the past I've been able to work on a variety of projects,
-            including a dashboarding app for industrial equipment, a web app for
-            managing a fleet of vehicles, and a mobile app for asset tracking
-            for construction projects. I'm always looking for new challenges and
-            opportunities to learn and grow as a developer, on a team that
-            prioritizes group success and development.
-          </Typography>
-          <Typography>
-            When I'm not coding, I enjoy going for longs walks with my dog,
-            watching true crime with my husband, drawing on my Cintiq or playing
-            and modding video games.
-          </Typography>
-        </Box>
+      <div className="break-bottom" />
+      <div class="parallax parallax-about">
+        <div className="about">
+          <div className="neon">
+            <div class="about-content">
+              <Box>
+                <Typography>
+                  I'm a software engineer with a passion for creating beautiful
+                  and functional web applications. I enjoy making beautiful and
+                  useful applications come to life. Whether it's implementing an
+                  existing design or creating a new one, I love the challenge of
+                  turning ideas into reality. I believe that things can be
+                  beautiful and funcitonal at the same time.
+                </Typography>
+                <Typography>
+                  Currently I'm a UI/UX Specialist at Ziiware, where I design
+                  mobile and web interfaces and develop front-end applications.
+                  I am designing and creating our new e-commerce based website
+                  using Hilla, React and Material UI, focusing on leveraging
+                  existing standards for shopping based sites. I am also
+                  modernizing the design of Ziiware's mobile application to
+                  focus on user experience and performance.
+                </Typography>
+                <Typography>
+                  In the past I've been able to work on a variety of projects,
+                  including a dashboarding app for industrial equipment, a web
+                  app for managing a fleet of vehicles, and a mobile app for
+                  asset tracking for construction projects. I'm always looking
+                  for new challenges and opportunities to learn and grow as a
+                  developer, on a team that prioritizes group success and
+                  development.
+                </Typography>
+                <Typography>
+                  When I'm not coding, I enjoy going for longs walks with my
+                  dog, watching true crime with my husband, drawing on my Cintiq
+                  or playing and modding video games.
+                </Typography>
+              </Box>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

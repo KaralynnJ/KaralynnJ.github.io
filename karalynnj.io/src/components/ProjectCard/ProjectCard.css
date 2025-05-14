@@ -29,12 +29,6 @@
   color: var(--terminal-cyan);
 }
 
-.cursor {
-  color: var(--terminal-cyan);
-  animation: blink 1s step-end infinite;
-  margin-left: 2px;
-}
-
 .terminal-line {
   display: flex;
   align-items: center;

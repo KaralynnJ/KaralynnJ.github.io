@@ -7,9 +7,11 @@ const FormattedTitleLine = ({ title, totalLength = 60 }) => {
   return (
     <>
       <span className="highlight">{side}</span>
-      {core}
-      <span className="highlight">{side}</span>
-      {extra}
+      <span>{core}</span>
+      <span className="highlight">
+        {side}
+        {extra}
+      </span>
     </>
   );
 };

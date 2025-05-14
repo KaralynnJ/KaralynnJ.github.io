@@ -5,12 +5,10 @@ import "./Projects.css";
 const projectList = [
   {
     title: "IlluminateMI",
-    description: [
-      "Modernized the design and future-proofed the tech stack of a legacy app. Created a unified",
-      "process for balancing new features with updating legacy code. Architected a micro frontend",
-      "solution and lead the development team through implementation. Built a design system and",
-      "component library.",
-    ],
+    description:
+      "Took a legacy app that was running on an outdated, hard-to-maintain codebase and helped bring it into the modern age. " +
+      "I led frontend development, redesigned the UI, and worked closely with the team to move the app toward a microservice architecture. " +
+      "We updated the tech stack, improved developer workflows, and made the app much easier to maintain and extend.",
     role: "Lead Frontend Developer and Designer",
     stack: "React, Kendo UI, C#, MSSQL, Figma",
     link: "https://illuminatemi.com",
@@ -18,33 +16,30 @@ const projectList = [
   {
     title: "ZZ Web Ordering",
     description: [
-      "Design and create a customizable e-commerce platform for business-to-business sales.",
-      "Lead development on the frontend, prioritizing user experience and performance.",
-      "Collaborate with backend developers to ensure seamless integration.",
+      "Started with a wholesale ordering tool originally built for inventory management and reimagined it as a modern B2B e-commerce platform. " +
+        "I’ve been handling both the frontend development and the design, focusing on usability, performance, and bringing the interface up to date " +
+        "with current UX standards. I'm leveraging Hilla and Material UI to quickly build out a robust interface.",
     ],
     role: "Lead Frontend Developer and Designer",
     stack: "React, Material UI, Hilla, Java, Spring Boot, MariaDB",
     link: "https://www.ziiware.com",
   },
   {
-    title: "Portfolio Website",
-    description: [
-      "Design and develop my personal website. Clearly convey my skills and",
-      "experience. Showcase my work and projects. Provide a way for potential employers",
-      "to contact me. Incorporate my personality and interests.",
-    ],
+    title: "Nightrider",
+    description:
+      "I built this site to showcase my work in a style that reflects both my personality and my background. " +
+      "The synthwave theme is a nod to the old-school computers I grew up with and my lifelong interest in tech. " +
+      "I designed and developed the site from scratch, aiming for a unique, nostalgic feel while still keeping things clean, clear, and professional.",
     role: "Frontend Developer and Designer",
     stack: "React, Joy UI, Vite",
     link: "https://karalynnj.github.io/",
   },
   {
     title: "ZZ Mobile Ordering",
-    description: [
-      "Design a mobile app for business-to-business sales. Balance the needs",
-      "of various stakeholders. Create a user-friendly interface that presents dense information",
-      "clearly. Collaborate with developers to ensure seamless integration. Manage feedback from",
-      "multiple stakeholders to adjust design as required.",
-    ],
+    description:
+      "I focused on design for this B2B mobile app, which had to serve two very different user groups with a lot of dense information. " +
+      "The challenge was to create clean, intuitive layouts that still handled the complexity. There was a lot of iteration; testing ideas, refining them, " +
+      "and finding the right balance between form and function within tight technical limits.",
     role: "Designer",
     stack: "Figma, Flutter, Firebase",
     link: "https://www.ziiware.com/ziizii-mobile-ordering",
@@ -170,10 +165,9 @@ const Projects = () => {
     <div className="terminal-panel">
       <div ref={containerRef} className="project-terminal">
         {bootStage >= 0 && (
-          <div className="terminal-line">
-            <span className="program-title">SynthTerm v1.4 </span>
-            Initialized
-          </div>
+          <span className="terminal-line">
+            <span className="program-title">NightRider v1.4 </span> Initialized
+          </span>
         )}
 
         {bootStage >= 1 && (
@@ -197,9 +191,7 @@ const Projects = () => {
                   idx < visibleProjectCount && (
                     <div key={idx}>
                       <div
-                        className={`terminal-line project-select ${
-                          selectedOptionIndex === idx ? "selected" : ""
-                        }`}
+                        className={`terminal-line project-select`}
                         onMouseEnter={() => setSelectedOptionIndex(idx)}
                         onClick={() => {
                           setSelectedIndex(idx);
@@ -207,11 +199,17 @@ const Projects = () => {
                           setVisibleDetailLineCount(0);
                         }}
                       >
-                        <span className="prompt">&gt; </span>
-                        <span className="clickable-title">
-                          View{" "}
-                          <span className="project-title">{proj.title}</span>
-                        </span>
+                        {selectedOptionIndex === idx ? (
+                          <span className="cursor-line">
+                            <span className="cursor">{">"}</span> View{" "}
+                            <span className="project-title">{proj.title}</span>
+                          </span>
+                        ) : (
+                          <span className="static-line">
+                            &nbsp;&nbsp;View{" "}
+                            <span className="project-title">{proj.title}</span>
+                          </span>
+                        )}
                       </div>
                     </div>
                   )
