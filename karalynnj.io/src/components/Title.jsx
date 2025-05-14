@@ -1,6 +1,6 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Box, Link, Stack, Typography } from "@mui/joy";
+import { Link, Stack, Typography } from "@mui/joy";
 import Projects from "../components/Projects";
 
 const Title = () => {
@@ -47,39 +47,29 @@ const Title = () => {
         <div className="about">
           <div className="neon">
             <div class="about-content">
-              <Box>
+              <Stack direction={"column"} spacing={2}>
                 <Typography>
-                  I'm a software engineer with a passion for creating beautiful
-                  and functional web applications. I enjoy making beautiful and
-                  useful applications come to life. Whether it's implementing an
-                  existing design or creating a new one, I love the challenge of
-                  turning ideas into reality. I believe that things can be
-                  beautiful and funcitonal at the same time.
+                  Hi, I'm Karalynn. I'm a developer and designer who cares a lot
+                  about thoughtful interfaces and clean, maintainable code. I
+                  work primarily in React, focusing on modern, accessible UIs
+                  with strong visuals. I love projects that bridge form and
+                  function— whether it's redesigning a legacy app or building a
+                  portfolio site with a synthwave twist.
                 </Typography>
                 <Typography>
-                  Currently I'm a UI/UX Specialist at Ziiware, where I design
-                  mobile and web interfaces and develop front-end applications.
-                  I am designing and creating our new e-commerce based website
-                  using Hilla, React and Material UI, focusing on leveraging
-                  existing standards for shopping based sites. I am also
-                  modernizing the design of Ziiware's mobile application to
-                  focus on user experience and performance.
+                  Right now, I'm a UI/UX developer at Ziiware, where I design
+                  and develop user interfaces for both mobile and the web. I
+                  enjoy being able to creatively solve problems and see my ideas
+                  come to life.
                 </Typography>
                 <Typography>
-                  In the past I've been able to work on a variety of projects,
-                  including a dashboarding app for industrial equipment, a web
-                  app for managing a fleet of vehicles, and a mobile app for
-                  asset tracking for construction projects. I'm always looking
-                  for new challenges and opportunities to learn and grow as a
-                  developer, on a team that prioritizes group success and
-                  development.
+                  My love of computers started as soon as I could reach the
+                  keyboard — literally. Ask me about it sometime, it's a funny
+                  story. When I'm not coding, I enjoy playing video games,
+                  drawing on my Cintiq and spending time with my husband and our
+                  dog.
                 </Typography>
-                <Typography>
-                  When I'm not coding, I enjoy going for longs walks with my
-                  dog, watching true crime with my husband, drawing on my Cintiq
-                  or playing and modding video games.
-                </Typography>
-              </Box>
+              </Stack>
             </div>
           </div>
         </div>
