@@ -15,11 +15,10 @@ const projectList = [
   },
   {
     title: "ZZ Web Ordering",
-    description: [
+    description:
       "Started with a wholesale ordering tool originally built for inventory management and reimagined it as a modern B2B e-commerce platform. " +
-        "I’ve been handling both the frontend development and the design, focusing on usability, performance, and bringing the interface up to date " +
-        "with current UX standards. I'm leveraging Hilla and Material UI to quickly build out a robust interface.",
-    ],
+      "I’ve been handling both the frontend development and the design, focusing on usability, performance, and bringing the interface up to date " +
+      "with current UX standards. I'm leveraging Hilla and Material UI to quickly build out a robust interface.",
     role: "Lead Frontend Developer and Designer",
     stack: "React, Material UI, Hilla, Java, Spring Boot, MariaDB",
     link: "https://www.ziiware.com",
