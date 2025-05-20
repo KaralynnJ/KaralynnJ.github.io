@@ -47,12 +47,12 @@ body {
   background-size: cover;
 }
 
-/* First parallax section */
+/* Hero parallax section */
 .parallax-hero {
   background-image: url("/assets/neon-dark.jpg");
 }
 
-/* Second parallax section (About Me) */
+/* About parallax section */
 .parallax-about {
   background: url("/assets/car_sunset.jpg"),
     linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
@@ -259,7 +259,8 @@ body {
 
 .about {
   position: relative;
-  height: 95vh;
+  height: fit-content;
+  min-height: 95vh;
   overflow: hidden;
   color: white;
   text-align: start;
@@ -293,6 +294,12 @@ body {
   background-color: var(--background-color);
   border-radius: 10px;
   position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .neon {
+    margin: 0.5rem;
+  }
 }
 
 .neon::after,

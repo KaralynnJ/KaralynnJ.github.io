@@ -1,11 +1,11 @@
 import { CssVarsProvider, Stack } from "@mui/joy";
 import "./App.scss";
-import Title from "./components/Title";
+import Main from "./sections/Main";
 
 function App() {
   return (
     <CssVarsProvider>
-      <Title />
+      <Main />
     </CssVarsProvider>
   );
 }

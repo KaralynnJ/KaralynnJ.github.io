@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import ProjectCard from "../ProjectCard";
+import ProjectCard from "../../components/ProjectCard";
 import "./Projects.css";
 
 const projectList = [
