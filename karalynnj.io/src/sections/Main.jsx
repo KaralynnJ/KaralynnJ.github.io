@@ -8,11 +8,7 @@ const Title = () => {
     <div>
       <Hero />
       <div className="break-top" />
-      <div className="projects">
-        <Stack>
-          <Projects />
-        </Stack>
-      </div>
+      <Projects />
       <div className="break-bottom" />
       <About />
     </div>

@@ -1,0 +1,28 @@
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 85px;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px 50px;
+  box-sizing: border-box;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--lightblue);
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav a:hover,
+.nav a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.nav a svg {
+  font-size: 1.5rem;
+}

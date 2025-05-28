@@ -1,5 +1,6 @@
 import React from "react";
 import { Stack, Typography } from "@mui/joy";
+import "./About.scss";
 
 const About = () => {
   return (

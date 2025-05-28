@@ -1,0 +1,86 @@
+.parallax-about {
+  background: url("/assets/car_sunset.jpg"),
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  background-blend-mode: overlay;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about {
+  position: relative;
+  height: fit-content;
+  min-height: 95vh;
+  overflow: hidden;
+  color: white;
+  text-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-content {
+  max-width: 600px;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+}
+
+.about-content h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ff00cc;
+}
+
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Courier New", monospace;
+}
+
+.neon {
+  background-color: var(--background-color);
+  border-radius: 10px;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .neon {
+    margin: 0.5rem;
+  }
+}
+
+.neon::after,
+.neon::before {
+  content: " ";
+  position: absolute;
+  inset: -0.25rem;
+  z-index: -1;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--gradient-blue),
+    var(--gradient-purple),
+    var(--gradient-pink),
+    var(--gradient-purple),
+    var(--gradient-blue)
+  );
+  border-radius: inherit;
+  animation: rotation 10s linear infinite;
+}
+
+.neon::after {
+  z-index: -1;
+  filter: blur(0.5rem);
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}

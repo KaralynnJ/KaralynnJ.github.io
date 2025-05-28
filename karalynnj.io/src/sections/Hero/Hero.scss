@@ -1,0 +1,56 @@
+.parallax-hero {
+  background-image: url("/assets/neon-dark.jpg");
+}
+
+.hero {
+  position: relative;
+  height: fit-content;
+  min-height: 95vh;
+  text-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero h1 {
+  font-family: "Oxanium", sans-serif !important;
+  color: transparent;
+  background: linear-gradient(
+    to bottom,
+    var(--lightblue) 10%,
+    white 40%,
+    var(--purple) 45%,
+    var(--pink) 55%,
+    white 85%
+  );
+  text-align: center;
+  background-clip: text;
+  font-size: 5rem;
+  filter: drop-shadow(3px 3px var(--background-color))
+    drop-shadow(1px 1px var(--pink));
+}
+
+.hero h3 {
+  font-family: "Mr Dafoe", cursive !important;
+  background: linear-gradient(to bottom, #11dff2 20%, white 80%);
+  color: transparent;
+  background-clip: text;
+  text-align: center;
+  font-size: 3rem;
+  z-index: 10;
+  transform: rotate(-1deg) translateY(-3.5rem);
+  letter-spacing: 0.25rem;
+  filter: drop-shadow(3px 3px var(--background-color))
+    drop-shadow(1px 1px var(--pink));
+}
+
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero h3 {
+    transform: rotate(-1deg) translateY(-1.75rem);
+    font-size: 1.5rem;
+  }
+}

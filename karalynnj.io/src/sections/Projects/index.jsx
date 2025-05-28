@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { Stack } from "@mui/joy";
 import ProjectCard from "../../components/ProjectCard";
-import "./Projects.css";
+import "./Projects.scss";
 
 const projectList = [
   {
@@ -161,79 +162,89 @@ const Projects = () => {
   }, [selectedOptionIndex, visibleProjectCount, viewMode]);
 
   return (
-    <div className="terminal-panel">
-      <div ref={containerRef} className="project-terminal">
-        {bootStage >= 0 && (
-          <span className="terminal-line">
-            <span className="program-title">NightRider v1.4 </span> Initialized
-          </span>
-        )}
-
-        {bootStage >= 1 && (
-          <div className="terminal-line">Verifying memory... OK</div>
-        )}
-
-        {bootStage === 2 && (
-          <div className="terminal-line">Loading{loadingDots}</div>
-        )}
-
-        {bootStage >= 3 && (
-          <>
-            <div className="terminal-line">
-              Projects loaded. Select a project to continue.
-            </div>
-            <div className="terminal-line space"></div>
-
-            {viewMode === "list" &&
-              projectList.map(
-                (proj, idx) =>
-                  idx < visibleProjectCount && (
-                    <div key={idx}>
-                      <div
-                        className={`terminal-line project-select`}
-                        onMouseEnter={() => setSelectedOptionIndex(idx)}
-                        onClick={() => {
-                          setSelectedIndex(idx);
-                          setViewMode("detail");
-                          setVisibleDetailLineCount(0);
-                        }}
-                      >
-                        {selectedOptionIndex === idx ? (
-                          <span className="cursor-line">
-                            <span className="cursor">{">"}</span> View{" "}
-                            <span className="project-title">{proj.title}</span>
-                          </span>
-                        ) : (
-                          <span className="static-line">
-                            &nbsp;&nbsp;View{" "}
-                            <span className="project-title">{proj.title}</span>
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  )
-              )}
-
-            {viewMode === "detail" && selectedIndex !== null && (
-              <ProjectCard
-                project={projectList[selectedIndex]}
-                onBack={() => {
-                  setViewMode("list");
-                  setVisibleProjectCount(0);
-                  setTimeout(() => {
-                    let index = 0;
-                    const interval = setInterval(() => {
-                      index++;
-                      setVisibleProjectCount(index);
-                      if (index >= projectList.length) clearInterval(interval);
-                    }, 300);
-                  }, 300);
-                }}
-              />
+    <div className="projects">
+      <Stack>
+        <div className="terminal-panel">
+          <div ref={containerRef} className="project-terminal">
+            {bootStage >= 0 && (
+              <span className="terminal-line">
+                <span className="program-title">NightRider v1.4 </span>{" "}
+                Initialized
+              </span>
             )}
-          </>
-        )}
-      </div>
+
+            {bootStage >= 1 && (
+              <div className="terminal-line">Verifying memory... OK</div>
+            )}
+
+            {bootStage === 2 && (
+              <div className="terminal-line">Loading{loadingDots}</div>
+            )}
+
+            {bootStage >= 3 && (
+              <>
+                <div className="terminal-line">
+                  Projects loaded. Select a project to continue.
+                </div>
+                <div className="terminal-line space"></div>
+
+                {viewMode === "list" &&
+                  projectList.map(
+                    (proj, idx) =>
+                      idx < visibleProjectCount && (
+                        <div key={idx}>
+                          <div
+                            className={`terminal-line project-select`}
+                            onMouseEnter={() => setSelectedOptionIndex(idx)}
+                            onClick={() => {
+                              setSelectedIndex(idx);
+                              setViewMode("detail");
+                              setVisibleDetailLineCount(0);
+                            }}
+                          >
+                            {selectedOptionIndex === idx ? (
+                              <span className="cursor-line">
+                                <span className="cursor">{">"}</span> View{" "}
+                                <span className="project-title">
+                                  {proj.title}
+                                </span>
+                              </span>
+                            ) : (
+                              <span className="static-line">
+                                &nbsp;&nbsp;View{" "}
+                                <span className="project-title">
+                                  {proj.title}
+                                </span>
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      )
+                  )}
+
+                {viewMode === "detail" && selectedIndex !== null && (
+                  <ProjectCard
+                    project={projectList[selectedIndex]}
+                    onBack={() => {
+                      setViewMode("list");
+                      setVisibleProjectCount(0);
+                      setTimeout(() => {
+                        let index = 0;
+                        const interval = setInterval(() => {
+                          index++;
+                          setVisibleProjectCount(index);
+                          if (index >= projectList.length)
+                            clearInterval(interval);
+                        }, 300);
+                      }, 300);
+                    }}
+                  />
+                )}
+              </>
+            )}
+          </div>
+        </div>
+      </Stack>
     </div>
   );
 };
