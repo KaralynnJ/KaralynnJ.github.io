@@ -1,4 +1,3 @@
-import React from "react";
 import { Stack, Typography } from "@mui/joy";
 import "./About.scss";
 
@@ -13,7 +12,7 @@ const About = () => {
                 Hi, I'm Karalynn. I'm a developer and designer who cares a lot
                 about thoughtful interfaces and clean, maintainable code. I work
                 primarily in React, focusing on modern, accessible UIs with
-                strong visuals. I love projects that bridge form and function—
+                strong visuals. I love projects that bridge form and function...
                 whether it's redesigning a legacy app or building a portfolio
                 site with a synthwave twist.
               </Typography>
