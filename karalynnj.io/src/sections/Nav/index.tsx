@@ -1,6 +1,6 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Stack, Typography, Link } from "@mui/joy";
+import { Link, Stack, Typography } from "@mui/joy";
 import "./Nav.scss";
 
 const Nav = () => {
@@ -9,7 +9,7 @@ const Nav = () => {
       <Stack direction={"row"} spacing={"1rem"}>
         <Typography>
           <a
-            href="/public/Jones Karalynn Resume.pdf"
+            href="/Jones Karalynn Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
