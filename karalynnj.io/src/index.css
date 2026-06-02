@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Colors ───────────────────────────────────────────── */
+  --color-onyx: #110e15;
+  --color-shadow: #1f1a28;
+  --color-lilac: #aea3c2;
+  --color-ghost: #efedf3;
+  --color-ghost-semitransparent: rgba(239, 237, 243, 0.8);
+  --color-ecto: #5fd2df;
+  --color-ecto-semitransparent: rgba(95, 210, 223, 0.1);
+
+  /* ── Font families ────────────────────────────────────── */
+  --font-grotesk:
+    "Space Grotesk", system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-cabin:
+    "Cabin", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-body: var(--font-cabin);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-onyx);
+    color: var(--color-lilac);
+    font-family: "Space Grotesk", sans-serif;
+  }
+}
+
+@layer components {
+  .typography {
+    p {
+      font-family: var(--font-cabin);
+      font-size: var(--font-size-body);
+      line-height: var(--line-height-body);
+      font-weight: var(--font-weight-regular);
+      color: var(--color-lilac);
+    }
+  }
+}
