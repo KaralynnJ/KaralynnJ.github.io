@@ -52,10 +52,10 @@ const Experience = () => {
           companyLink="https://atsindustrialautomation.com/illuminate-manufacturing-intelligence/"
         >
           <p>
-            Owned the frontend in the redevelopment of a legacy analytics app.
-            Architected the build on a modern <Ecto>React</Ecto> and{" "}
-            <Ecto>Typescript</Ecto> stack using installable{" "}
-            <Ecto>microfrontends</Ecto>, reducing install size and improving
+            Owned the frontend in the redevelopment of a legacy factory
+            analytics app. Architected the build on a modern <Ecto>React</Ecto>{" "}
+            and <Ecto>Typescript</Ecto> stack using installable{" "}
+            <Ecto>micro frontends</Ecto>, reducing install size and improving
             long-term maintainability.
           </p>
           <p>
@@ -72,7 +72,7 @@ const Experience = () => {
           <p>
             Led frontend development by providing technical guidance, pair
             programming, documentation and code reviews. This reduced blockers
-            and led the team to surpasss their support ticket goals.
+            and led the team to surpass their support ticket goals.
           </p>
           <p>
             Mentored junior developers and co-ops on best practices and team
