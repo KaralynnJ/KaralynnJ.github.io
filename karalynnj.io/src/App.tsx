@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./App.css";
-import hourglass from "./assets/hourglass.gif";
 import WaybackDialog from "./components/WaybackDialog";
 import AboutSection from "./sections/about/AboutSection";
 import ExperienceSection from "./sections/experience/ExperienceSection";
 import HeroSection from "./sections/hero/HeroSection";
+import ProjectsSection from "./sections/projects/ProjectsSection";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +14,7 @@ function App() {
       <HeroSection />
       <AboutSection />
       <ExperienceSection />
-      {/* <ProjectsSection /> */}
+      <ProjectsSection />
 
       <footer className="flex items-center justify-center py-6 mt-10 text-lilac bg-shadow w-full min-h-16 relative box-content">
         <p className="text-sm">
@@ -24,12 +24,12 @@ function App() {
           <span className="text-ghost-semitransparent">React</span>{" "}
           <span className="text-ecto">✦</span>
         </p>
-        <button
+        {/* <button
           onClick={() => setIsOpen(true)}
           className="absolute bottom-6 right-6"
         >
           <img src={hourglass} alt="Loading..." className="w-16 h-16" />
-        </button>
+        </button> */}
       </footer>
       <WaybackDialog isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>

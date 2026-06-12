@@ -7,6 +7,13 @@ const ProjectsSection = () => {
       {" "}
       <div className="grid grid-cols-3 grid-rows-2 gap-6 font-cabin text-lg text-lilac">
         <ProjectCard
+          title="The Animal Crossing Ocean"
+          description="An interaction and light animation focused project. This website showcases all of the ocean fish you can catch in the game Animal Crossing, using CSS based animations to put them in a realistic looking ocean with accurate depth markers. Learn fun facts with Blathers by clicking on the fish."
+          tags={["HTML", "CSS", "Interaction", "Animation"]}
+          link="https://karalynnj.github.io/The-Animal-Crossing-Ocean/"
+          spanClass="row-span-2 "
+        />
+        {/* <ProjectCard
           title="White Label Design System"
           description="A white label design system made for a B2B Saas product using Figma and Material 3 design principles. It uses a visual language to convey meaning without relying on any fixed brand color or identity, while also maintaining a brand presence."
           tags={["Figma", "Mobile", "Material 3"]}
@@ -26,7 +33,7 @@ const ProjectsSection = () => {
           tags={["Figma", "React", "Tailwind"]}
           link="/projects/personal-portfolio"
           spanClass="col-span-2 "
-        />
+        /> */}
       </div>
     </SectionContainer>
   );
